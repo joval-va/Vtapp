@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Crack the Code</title>
+</head>
+<body>
+
+  <div id="content-box">
+    <img id="p1-image" src="p1.png" alt="p1"> 
+
+    <p style="font-size:160%;">Crack the Code <br>Hint: Follow the rainbow</p>
+
+    <input type="text" id="input-field" placeholder="Enter your answer">
+
+    <button id="check-button" onclick="checkCode()">Check</button>
+
+    <p id="message"></p>
+  </div>
+
+  <div id="congrats-popup" class="popup">
+    <div class="popup-content">
+      <h2>Congrats</h2>
+      <img src="treasure.png" alt="Treasure">
+      <p style="font-size: 150%;">You've found the treasure!</p>
+      <button onclick="closePopup()">Yay!</button>
+    </div>
+  </div>
+  
+  <script>
+    const checkCode = () => {
+      const inputField = document.getElementById('input-field');
+      
+      if(inputField.value === "pepper" || inputField.value === "pepper potts") {
+        document.getElementById('congrats-popup').style.display = 'block';
+      } else {
+        // Handle wrong input if necessary
+      }
+    };
+  
+    const closePopup = () => {
+      document.getElementById('congrats-popup').style.display = 'none';
+    };
+  </script>
+  </body>
+  </html>

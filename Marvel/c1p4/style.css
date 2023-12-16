@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('mcubgimg.jpg'); 
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif; 
+}
+
+#content-box {
+  background-color: rgba(194, 185, 241, 0.59); 
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px; 
+  backdrop-filter: blur(2px);
+  box-shadow: -15px 17px 17px rgba(10,10,10,0.25);
+}
+
+#p1-image {
+  max-width: 100%;
+  height: auto;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #fff; 
+}
+
+#input-field {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+}
+
+#check-button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: center;
+  top: 150px;
+  width: 500px;
+  height: 100%;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content img {
+  width: auto;
+  height: auto;
+  margin: 10px 0;
+  
+}
+
+.popup-content button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+}
