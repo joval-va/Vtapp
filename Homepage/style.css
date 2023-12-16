@@ -1,0 +1,103 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+span {
+    font-size: 30px;
+}
+
+.background-image-container {
+  background-image: url('Marvel\ vs\ DC.jpg');
+  background-size: cover;
+  background-position: top; /* Change this line */
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+}
+
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid rgba(255,255,255,0.7);
+  box-shadow: -15px 17px 17px rgba(10,10,10,0.25);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Adjusted for better responsiveness */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.glass-button {
+    background: none;
+    border: none; /* Remove the border */
+    border-radius: 5px;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px 0;
+  }
+  
+  
+  .glass-container h1 {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .marvel-button img
+    {
+      height: 75px;
+      width: 150px;
+      margin-right: 15px;
+  }
+  .dc-button img {
+    height: 75px;
+    width: 150px;
+    margin-right: 20px;
+  }
+  
+  .glass-container img {
+    margin: 5px; /* Adjusted margin value */
+  }
+/* Media query for screens smaller than 600px */
+@@media (max-width: 768px) {
+    .glass-container {
+      padding: 20px;
+    }
+  }
+  
+  /* Tablets */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .glass-container {
+      padding: 30px;
+    }
+  }
+  
+  /* PCs and Larger Screens */
+  @media (min-width: 1025px) {
+    .glass-container {
+      padding: 40px;
+    }
+  }  
