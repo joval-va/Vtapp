@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Centered Text</title>
+    <style>
+        /* Center the text horizontally and vertically */
+        body {
+            background-image: url('mcubgimg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0; /* Remove default margin */
+            height: 100vh;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        .white-box {
+            background-color: rgba(194, 185, 241, 0.59);
+            color: black;
+            padding: 20px; /* Add some padding for spacing */
+            width: 80%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the box horizontally */
+            text-align: left; /* Center the text inside the box */
+            box-shadow: -15px 17px 17px rgba(50, 50, 50, 0.25); /* Add a subtle shadow */
+            font-size: 9px;
+            position: absolute;
+            top: 70px;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            backdrop-filter: blur(2px);
+            border-radius: 10px;
+            font-weight: normal;
+        }
+
+        .input-box {
+            background-color: rgba(194, 185, 241, 0.59);
+            color: black;
+            padding: 30px; /* Add some padding for spacing */
+            width: 30%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the box horizontally */
+            text-align: center; /* Center the text inside the box */
+            box-shadow: -15px 17px 17px rgba(50, 50, 50, 0.25); /* Add a subtle shadow */
+            position: absolute; /* Position the box absolutely */
+            top: 300px; /* Add 200px padding from the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            backdrop-filter: blur(2px);
+            border-radius: 10px;
+        }
+
+        .input-box p {
+            font-size: 50px;
+            font-weight: normal;
+        }
+
+                /* Style the input field and button */
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            height: 30px;
+            font-size: 20px;
+            border-width: 1px;
+        }
+
+        button {
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+                /* Style the "Next challenge" button */
+        .next-button {
+            position: absolute;
+            top: 730px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ccc; /* Gray color when disabled */
+        }
+
+        /* Change button color when enabled */
+        .next-button:enabled {
+            background-color: #0074D9; /* Blue color when enabled */
+        }
+    </style>
+</head>
+<body>
+    <div class="white-box">
+    <h1>🕵‍♂ Congratulations, Code Sleuth!<br>
+You've conquered the coding challenge and now face the intriguing Word-Search Round.<br> 
+Unravel the hidden word within the code to unlock the gateway to your next adventure! 🧩<br>
+🕵‍♀ Discover the hidden word concealed within using the Caesar cipher.<br>
+🤫 The hidden word is related to Marvel Cinematic Universe and is waiting to be unveiled.</h1>
+</div>
+
+<div class="input-box">
+    <h1>Crack the code</h1>
+    <p>MDUYLX</p>
+    <input type="text" id="user-input" placeholder="Enter your answer">
+    <br>
+    <button onclick="checkInput()">Submit</button>
+</div>
+
+<button id="next-button" class="next-button" disabled>Next challenge</button>
+
+<script>
+    function checkInput() {
+        const userInput = document.getElementById('user-input').value.toLowerCase();
+        const nextButton = document.getElementById('next-button');
+        nextButton.disabled = userInput !== 'jarvis';
+    }
+</script>
+</body>
+</html>
