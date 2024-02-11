@@ -7,6 +7,22 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="home.png">
   <title>Homepage</title>
+  <script>
+    function redirectToRandomSite(isMarvel) {
+      const randomNumber = Math.floor(Math.random() * 60) + 1;
+      const baseUrl = isMarvel ? 'https://joval-va.github.io/Vtapp/Marvel' : 'https://joval-va.github.io/Vtapp/DC';
+      const targetURL = `${baseUrl}/c${randomNumber}p1/main.html`;
+      window.location.href = targetURL;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const marvelButton = document.querySelector('.marvel-button');
+      const dcButton = document.querySelector('.dc-button');
+
+      marvelButton.addEventListener('click', () => redirectToRandomSite(true));
+      dcButton.addEventListener('click', () => redirectToRandomSite(false));
+    });
+  </script>
 </head>
 
 <body>
@@ -16,7 +32,7 @@
       <div class="button-container">
         <button class="glass-button marvel-button"><img src="marvel logo.jpg" alt="Marvel"></button>
         <span style="color: black;">or</span>
-        <button class="glass-button dc-button"><img src="dceu-logo.jpg"alt="DC"></button>
+        <button class="glass-button dc-button"><img src="dceu-logo.jpg" alt="DC"></button>
       </div>
     </div>
   </div>
