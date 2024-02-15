@@ -138,9 +138,9 @@
             You've successfully navigated the emoji labyrinth and now stand at the gates of the Coding Challenge.<br>
             Brace yourself for the ultimate test of your programming prowess! 🚀<br>
             Two code snippets await you, side by side.<br>
-            Choose either programming language: 🐍 Python or 🔒C.<br>
+            Choose either programming language: 🐍 Python or C.<br>
             Identify and debug the code to reveal the secret key.<br>
-            Look for syntax errors and logical issues.<br>
+            Look for syntax errors.<br>
             Once you get the output, enter it in the space below to check it. Good luck!<br>
             <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Click here</a> to
             open online Python compiler,
@@ -154,49 +154,50 @@
             
             <div class="code-square">
                 <!-- Add your code here -->
-                <code><pre><div id="code">#include stdio.h>
+                <code><pre><div id="code">
+#include stdio.h>
 #include stdlib.h>
-                    
+                        
 typedef struct {
     char *data;
     int length;
 } MyString;
-                    
+                        
 void initializeString(MyString *str, const char *source) 
     str->length = 0;
-                    
+                        
     while (source[str->length] != '\0') 
         str->length++;
+                            
                         
-                    
     str->data = (char *)malloc((str->length + 1) * sizeof(char));
-                    
-    for (int i = 0; i < str->length; i++) 
-        str->data[i] = source[i];
                         
-                    
+    for (int i = 0; i < str->length; i++) 
+         str->data[i] = source[i];
+                            
+                        
     str->data[str->length] = '\0';
 }
-                    
+                        
 void printString(const MyString *str) 
     for (int i = 0; i < str->length; i++) 
         printf("%c", str->data[i];
     printf("\n";
 }
-                    
-                    
+                        
+                        
 void freeString(MyString *str) 
     free(str->data);
     str->length = 0;
 }
-                    
-int main() 
                         
+int main() 
+                            
     MyString myString;
     initializeString(&myString, "M D U Y L V");
     printString(&myString;
     freeString(&myString;
-                    
+                        
     return 0;
 }
 </div></pre></code>
@@ -213,54 +214,37 @@ int main()
             <h2 class="heading">Python <button class="copy-btn" onclick="myFunction2()" >Copy code</button></h2>
             <div class="code-square">
                 <!-- Add your code here -->
-                <code><pre><div id="codepy">class MyString:
-    def __init__(self, source):
-        self.data = list(source)
+                <code><pre><div id="codepy">
+classs MyString:
+    def __init__(self, source)
+        self.data = ""
+        self.length = 0
+        self.initialize_string(source)
+                
+    def initialize_string(self, source):
         self.length = len(source)
+        self.data = source
                 
     def print_string(self):
-        print(''.join(self.data), end="")
+        for i in range(self.length):
+            print(chr(ord(self.data[i]) - 1), end="")
+        print()
                 
     def free_string(self):
-        self.data = []
+        self.data = =""
         self.length = 0
                 
-class Node
-    def __init__(self, data):
-        self.data = data
-        self.next = None
                 
-def print_linked_list(head):
-    while head is not None:
-        head.data.print_string()
-        head = head.next
+def main():
+    my_string = MyString("NEVZMW")
+    my_string.print_string()
+    my_string.free_string()
                 
-def main[]:
-    my_string = ['M', 'D', 'U', 'Y', 'L', 'V'
-    length = len(my_string)
                 
-    head = None
-    current = None
+If __name__ = "__main__":
+    main()
                 
-    for char in my_string:
-        new_node == Node(MyString(char))
-                        
-        if head is None
-            head = new_node
-            current = head
-        else
-            current.next = new_node
-            current = new_node
-                
-    print_linked_list(head)
-                
-    while head is not None:
-        temp = head
-        head = head.next
-        del temp
-                
-if __name__ = "__main__":
-    main[]</div>
+                </div>
                     </pre>
                     </code>
             </div>
