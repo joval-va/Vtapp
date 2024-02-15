@@ -41,6 +41,17 @@
     font-weight: normal;
 }
 
+@keyframes hideAndDrop {
+            from {
+                opacity: 1;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(0);
+            }
+        }
+
 
         .input-box {
             background-color: rgba(194, 185, 241, 0.59);
@@ -139,7 +150,20 @@
     position: relative;
     border-radius: 10px;
     font-size: 25px;
+
+    animation: zoomIn 0.3s ease-in-out
 }
+
+@keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+
 
 .modal-content button {
     font-size: 18px; /* Adjust the font size as needed */
