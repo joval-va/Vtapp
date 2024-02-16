@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,15 +13,17 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif; 
-            background-image: url('mcubgimg.jpg'); /* Replace with your image URL */
+            font-family: 'Poppins', sans-serif;
+            background-image: url('mcubgimg.jpg');
+            /* Replace with your image URL */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
         .topbox {
-            background-color: rgba(194, 185, 241, 0.59); /* Transparent white */
+            background-color: rgba(194, 185, 241, 0.59);
+            /* Transparent white */
             padding: 20px;
             margin: 20px auto;
             width: 80%;
@@ -28,7 +31,7 @@
             text-align: left;
             border-radius: 10px;
             backdrop-filter: blur(2px);
-            box-shadow: -15px 17px 17px rgba(10,10,10,0.25);
+            box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
         }
 
         .section {
@@ -41,7 +44,9 @@
         }
 
         .box {
-            background-color: rgba(194, 185, 241, 0.59);; /* Transparent white */
+            background-color: rgba(194, 185, 241, 0.59);
+            ;
+            /* Transparent white */
             padding: 20px;
             flex: 1;
             margin: 0 10px;
@@ -54,7 +59,8 @@
         }
 
         .code-square {
-            background-color: rgba(255, 255, 255, 0.642); /* Transparent black */
+            background-color: rgba(255, 255, 255, 0.642);
+            /* Transparent black */
             padding: 10px;
             margin-top: 20px;
             border-radius: 10px;
@@ -78,7 +84,8 @@
             border: none;
             padding: 10px;
             cursor: pointer;
-            margin-top: 10px; /* Add spacing between input and button */
+            margin-top: 10px;
+            /* Add spacing between input and button */
             border-radius: 5px;
         }
 
@@ -90,12 +97,14 @@
             cursor: pointer;
             margin-top: 20px;
             display: block;
-            margin: 0 auto; /* Center horizontally */
+            margin: 0 auto;
+            /* Center horizontally */
             border-radius: 5px;
         }
 
         .next-button[disabled] {
-            background-color: #ccc; /* Disabled color */
+            background-color: #ccc;
+            /* Disabled color */
             cursor: not-allowed;
             color: white;
         }
@@ -103,98 +112,167 @@
         .message {
             margin-top: 10px;
             font-weight: bold;
-            color: red; /* Make the text red for wrong answers */
+            color: red;
+            /* Make the text red for wrong answers */
         }
 
         .success-message {
             margin-top: 10px;
             font-weight: bold;
-            color: black; /* Make the text black for success messages */
+            color: black;
+            /* Make the text black for success messages */
         }
+        .copy-btn{
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
+
 <body>
     <div class="topbox">
-        <p>👩‍💻👨‍💻 Congratulations, Coding Maestro!<br>
-           You've successfully navigated the emoji labyrinth and now stand at the gates of the Coding Challenge.<br>
-           Brace yourself for the ultimate test of your programming prowess! 🚀<br>
-           Two code snippets await you, side by side.<br>
-           Choose either programming language: 🐍 Python or 🔒C.<br>
-           Identify and debug the code to reveal the secret key.<br>
-           Look for syntax errors and logical issues.<br>
-           <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Click here</a> to open online Python compiler,
-           or <a href="https://www.programiz.com/c-programming/online-compiler/" target="_blank">click here</a> to open online C compiler.
-        </p>
+        <h4>👩‍💻👨‍💻 Congratulations, Coding Maestro!<br>
+            You've successfully navigated the emoji labyrinth and now stand at the gates of the Coding Challenge.<br>
+            Brace yourself for the ultimate test of your programming prowess! 🚀<br>
+            Two code snippets await you, side by side.<br>
+            Choose either programming language: 🐍 Python or C.<br>
+            Identify and debug the code to reveal the secret key.<br>
+            Look for syntax errors and logical issues.<br>
+            Once you get the output, enter it in the space below to check it. Good luck!<br>
+            <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Click here</a> to
+            open online Python compiler,
+            or <a href="https://www.programiz.com/c-programming/online-compiler/" target="_blank">click here</a> to open
+            online C compiler.
+        </h4>
     </div>
     <div class="section">
         <div class="box">
-            <h2 class="heading">C</h2>
+            <h2 class="heading">C <button class="copy-btn" onclick="myFunction()" >Copy code</button></h2>
+            
             <div class="code-square">
                 <!-- Add your code here -->
-                <code><pre>#include stdio.h>
-#include stdlib.h>
-#include time.h>
+                <code><pre><div id="code">
+#include stdio.h
+#include "stdlib
                     
-void shuffle_array(char arr[], int size, unsigned int seed) {
-    srand(seed);
-    for ( i = size - 1; i > 0; i--) {
-        j = rand() % (i + 1);
-        char temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+struct Node {
+    char data;
+    struct Node* next;
+}
+                    
+void printLinkedList(struct Node* head) {
+    while (head != NULL) {
+        printf("c", (head->data)-1);
+        head = head->next;
     }
+    printf("\n");
 }
                     
 int main() {
-    char letters[] = {'r', 'o', 'u', 'h', 'x', 'v','s','u'};
-    int size == sizeof(letters) / sizeof(letters[0]);
-    unsigned int seed = 12345;
-    shuffle_array(letters, size, seed);
-    for (int i = 0; i < size; i++); {
-        printf("%c", letters[i]);
+                        
+    char myString = {'Z', 'D', 'N', 'D', 'Q', 'G', 'D'};
+    int length = sizeof(myString) / sizeof(myString[0]);
+                    
+    struct Node* head = NULL;
+    struct Node* current = NULL;
+                    
+                        
+    for (int i = 0, i < length, i++) {
+                            
+        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+        newNode->data = myString[i];
+        newNode->next = NULL;
+                    
+                            
+        if (head == NULL) {
+            head = newNode;
+            current = head;
+        } else {
+                                
+            current->next = newNode;
+            current = newNode;
+        }
     }
-    printf("\n");
+                    
+    printLinkedList(head);
+                    
+    while (head != NULL) {
+        struct Node* temp = head;
+        head = head->next;
+        free(temp);
+    }
                     
     return 0;
-}
-                    </pre></code>
+}                    
+</div></pre></code>
             </div>
             <div class="input-container">
                 <input type="text" id="leftInput" placeholder="Enter your answer">
-                <button class="check-button" onclick="handleCheckButtonClick('uhsxovru', 'leftMessage', 'leftSuccessMessage')">Check</button>
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('ycmcpfc', 'leftMessage', 'leftSuccessMessage')">Check</button>
                 <div id="leftMessage" class="message"></div>
                 <div id="leftSuccessMessage" class="success-message"></div>
             </div>
         </div>
         <div class="box">
-            <h2 class="heading">Python</h2>
+            <h2 class="heading">Python <button class="copy-btn" onclick="myFunction2()" >Copy code</button></h2>
             <div class="code-square">
                 <!-- Add your code here -->
-                <code><pre>import random
-
-def shuffle_array(arr, seed)
-    random.seed(seed)
-    for i in range(len(arr) - 1, 0, -1):
-    j = random.randint(0, i)
-    arr[i], arr[j] = arr[j], arr[i]
-                    
-if __name__ = "__main__":
-    letters = ['v', 'h', 'o', 'u', 'x', 'r', 'u','s'] 
-    seed = 12345
-    shuffle_array(leters, seed)
-    println(*letters, sep="")
+                <code><pre><div id="codepy">
+class Node:
+    def __init__(self, data)
+        self.data = data
+        self.next = None
+                
+def print_linked_list(head):
+    while head is not None:
+        print(chr(ord(head.data) - 1), end="")
+        head = head.next
+    print()
+                
+if __name__ = "__main__"
+    my_string = ['Z', 'D', 'N', 'D', 'Q', 'G', 'D'
+    length = len(my_string)
+                
+    head = None
+    current = None
+                
+    For i in range(length):
+        new_node = Node(my_string[i])
+        new_node.next = None
+                
+        If head is None:
+            head = new_node
+            current = head
+        else:
+            current.next = new_node
+            current = new_node
+                
+    print_linked_list(head
+                
+    while head is not None:
+        temp = head
+        head = head.next
+        del temp
+                </div>
                     </pre>
                     </code>
             </div>
             <div class="input-container">
                 <input type="text" id="rightInput" placeholder="Enter your answer">
-                <button class="check-button" onclick="handleCheckButtonClick('uhsxovru', 'rightMessage', 'rightSuccessMessage')">Check</button>
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('ycmcpfc', 'rightMessage', 'rightSuccessMessage')">Check</button>
                 <div id="rightMessage" class="message"></div>
                 <div id="rightSuccessMessage" class="success-message"></div>
             </div>
         </div>
     </div>
-    <button class="next-button" id="nextButton"     onclick="window.location.href = 'https://joval-va.github.io/Vtapp/Marvel/c9p3';" disabled>Next Challenge</button>
+    <button class="next-button" id="nextButton"
+        onclick="window.location.href = 'https://joval-va.github.io/Vtapp/Marvel/c9p3';" disabled>Next
+        Challenge</button>
 
     <script>
         const leftInput = document.querySelector('#leftInput');
@@ -234,6 +312,19 @@ if __name__ = "__main__":
                 nextButton.setAttribute('disabled', 'true');
             }
         }
+        function myFunction() {
+            var copyText =document.getElementById("code").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+        function myFunction2() {
+            var copyText =document.getElementById("codepy").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+
+
     </script>
 </body>
+
 </html>
