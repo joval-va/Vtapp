@@ -1,319 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="dc logo favicon.png">
-    <title>Round 1 part 3</title>
+    <title>Round 1 part 2</title>
     <style>
-        /* Center the text horizontally and vertically */
         body {
-            background-image: url('dcubgimg.jpg'); /* Replace with your image URL */
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('dcubgimg.jpg');
+            /* Replace with your image URL */
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
-            margin: 0; /* Remove default margin */
-            height: 100vh;
-            font-family: 'Poppins', sans-serif; 
+            background-attachment: fixed;
         }
 
-        .white-box {
-    background-color: rgba(194, 185, 241, 0.59);
-    color: black;
-    padding: 20px; /* Add some padding for spacing */
-    width: 80%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the box horizontally */
-    text-align: left; /* Center the text inside the box */
-    box-shadow: -15px 17px 17px rgba(50, 50, 50, 0.25); /* Add a subtle shadow */
-    font-size: 9px;
-    
-    /* Updated positioning */
-    position: relative;
-    top: 20px; /* Adjust the distance from the top */
-    right: 20px; /* Adjust the distance from the right */
-    
-    backdrop-filter: blur(2px);
-    border-radius: 10px;
-    font-weight: normal;
-}
-
-@keyframes hideAndDrop {
-            from {
-                opacity: 1;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(0);
-            }
-        }
-
-
-        .input-box {
-            background-color: rgba(194, 185, 241, 0.59);
-            color: black;
-            padding: 30px; /* Add some padding for spacing */
-            width: 30%; /* Adjust the width as needed */
-            margin: 0 auto; /* Center the box horizontally */
-            text-align: center; /* Center the text inside the box */
-            box-shadow: -15px 17px 17px rgba(50, 50, 50, 0.25); /* Add a subtle shadow */
-            position: absolute; /* Position the box absolutely */
-            top: 300px; /* Add 200px padding from the top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for centering */
+        .topbox {
+            background-color: rgba(194, 185, 241, 0.8);
+            /* Transparent white */
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            border-radius: 10px;
             backdrop-filter: blur(2px);
+            box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
             border-radius: 10px;
         }
 
-        .input-box p {
-            font-size: 18px;
-            font-weight: normal;
+        .box {
+            background-color: rgba(194, 185, 241, 0.803);
+            ;
+            /* Transparent white */
+            padding: 20px;
+            flex: 1;
+            margin: 0 10px;
+            border-radius: 10px;
         }
 
-        /* Style the input field and button */
-        input[type="text"] {
-            width: 80%;
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .code-square {
+            background-color: rgba(255, 255, 255, 0.642);
+            /* Transparent black */
             padding: 10px;
-            margin-bottom: 25px;
-            border-radius: 5px;
-            height: 30px;
-            font-size: 20px;
-            border-width: 1px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
 
-        button {
-            background-color: #0074D9;
+        .input-container {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .check-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            /* Add spacing between input and button */
+            border-radius: 5px;
+        }
+
+        .next-button {
+            background-color: #28a745;
+            color: #000000;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+            /* Center horizontally */
+            border-radius: 5px;
+        }
+
+        .next-button[disabled] {
+            background-color: #ccc;
+            /* Disabled color */
+            cursor: not-allowed;
+            color: white;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: red;
+            /* Make the text red for wrong answers */
+        }
+
+        .success-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: black;
+            /* Make the text black for success messages */
+        }
+        .copy-btn{
+            background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px 20px;
-            cursor: pointer;
             border-radius: 5px;
         }
-
-        /* Style for the wrong answer message */
-        .wrong-message {
-            color: red;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-
-        /* Style for the right answer message */
-        .right-message {
-            color: green;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-
-        /* Style for the "Next challenge" button */
-        .next-button {
-            position: absolute;
-            top: 700px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ccc; /* Gray color when disabled */
-        }
-
-        /* Change button color when enabled */
-        .next-button:enabled {
-            background-color: rgb(75, 243, 97); /* Blue color when enabled */
-            color: black;
-        }
- /* Style for the modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto; /* Center the modal vertically */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Adjust the width as needed */
-    height: 400px; /* Adjust the height as needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 10px;
-    font-size: 25px;
-
-    animation: zoomIn 0.3s ease-in-out
-}
-
-@keyframes zoomIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-
-
-.modal-content button {
-    font-size: 18px; /* Adjust the font size as needed */
-    padding: 10px 20px; /* Adjust the padding as needed */
-}
-
-/* Add margin to create vertical spacing between child elements */
-.modal-content p,
-.modal-content input,
-.modal-content button,
-.modal-content .wrong-message {
-    margin-bottom: 15px; /* Adjust the value as needed */
-}
-
-.close {
-    color: #aaaaaa;
-    position: absolute;
-    top: 0px;
-    right: 30px; /* Adjust this value as needed */
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease; /* Add a smooth color transition */
-    /* margin-right: 10px; Add spacing to the right of the "x" */
-}
-
-.modal-content input-container {
-        margin-bottom: 20px; /* Add spacing between input and button */
-        height: 20px;
-    }
-
-/* Increase the size of the input field */
-#passwordInputModal {
-    width: 40%; /* Adjust the width as needed */
-    height: 40px; /* Adjust the height as needed */
-    margin-bottom: 15px; /* Add some spacing below the input field */
-    border-radius: 5px;
-    text-align: center;
-    font-size: 15px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
 
     </style>
 </head>
+
 <body>
-    <div class="white-box">
-        <h1>🕵‍♂ Congratulations, Code Sleuth!<br>
-        You've conquered the coding challenge and now face the intriguing Word-Search Round.<br> 
-        Unravel the hidden word within the code to unlock the gateway to your next adventure! 🧩<br>
-        🕵‍♀ Discover the hidden word concealed within using the Caesar cipher.<br>
-        🤫 The hidden word is related to DC Extended Universe and is waiting to be unveiled.<br>
-        Use <a href="https://cryptii.com/pipes/caesar-cipher"  target="_blank">this link</a> to help you with decoding<br>
-    </h1>
+    <div class="topbox">
+        <h4>👩‍💻👨‍💻 Congratulations, Coding Maestro!<br>
+            You've successfully navigated the emoji labyrinth and now stand at the gates of the Coding Challenge.<br>
+            Brace yourself for the ultimate test of your programming prowess! 🚀<br>
+            Two code snippets await you, side by side.<br>
+            Choose either programming language: 🐍 Python or C.<br>
+            Identify and debug the code to reveal the secret key.<br>
+            Look for syntax errors and logical issues.<br>
+            Once you get the output, enter it in the space below to check it. Good luck!<br>
+            <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Click here</a> to
+            open online Python compiler,
+            or <a href="https://www.programiz.com/c-programming/online-compiler/" target="_blank">click here</a> to open
+            online C compiler.
+        </h4>
     </div>
+    <div class="section">
+        <div class="box">
+            <h2 class="heading">C <button class="copy-btn" onclick="myFunction()" >Copy code</button></h2>
+            
+            <div class="code-square">
+                <!-- Add your code here -->
+                <code><pre><div id="code">
+#include stdio.h>
+#include stdlib.h>
+                        
+define MAX_SIZE 100
+                        
+struct Queue {
+    char data[MAX_SIZE],
+    int front, rear;
+}
+                        
+void initializeQueue(struct Queue* queue) {
+    queue->front = -1;
+    queue->rear = -1;
+}
+                        
+int isEmpty(struct Queue* queue) {
+    return (queue->front == -1 && queue->rear === -1);
+}
+                        
+int isFull(struct Queue* queue) {
+    return (queue->rear == MAX_SIZE - 1);
+}
+                        
+void enqueue(struct Queue* queue, char value) {
+    if isFull(queue)) {
+        print("Queue is full\n");
+        exit(EXIT_FAILURE
+    }
+                        
+    if (isEmpty(queue)) {
+        queue->front = 0;
+        queue->rear = 0;
+    } else 
+        queue->rear++;
+    }
+                        
+    queue->data[queue->rear] = value;
+    }
+                        
+    char dequeue(struct Queue* queue) {
+        if (isEmpty(queue)) {
+            print"Queue is empty\n";
+            exit(EXIT_FAILURE);
+        }
+                        
+        char value = queue->data[queue->front];
+                        
+        if queue->front == queue->rear) {
+            queue->front = -1;
+            queue->rear = -1;
+        } else {
+            queue->front++;
+        }
+                        
+        return value;
+    }
+                        
+    void printQueue(struct Queue* queue) {
+        int i;
+        for (i = queue->front, i <= queue->rear, i++) {
+            printf("c", (queue->data[i])-3);
+        }
+        printf("\n");
+    }
+                        
+    int main() {
+                        
+        char myString = {'Y', 'N', 'G', 'F', 'G', 'S'};
+        int length = sizeof(myString) / sizeof(myString[0]);
+                        
+        struct Queue myQueue;
+        initializeQueue(&myQueue);
+                        
+        for  i = 0, i < length,i++;) {
+            enqueue(&myQueue, myString[i]);
+        }
+                        
+        printQueue(myQueue);
+                        
+        return 0;
+    }
+</div></pre></code>
+            </div>
+            <div class="input-container">
+                <input type="text" id="leftInput" placeholder="Enter your answer">
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('vkdcdp', 'leftMessage', 'leftSuccessMessage')">Check</button>
+                <div id="leftMessage" class="message"></div>
+                <div id="leftSuccessMessage" class="success-message"></div>
+            </div>
+        </div>
+        <div class="box">
+            <h2 class="heading">Python <button class="copy-btn" onclick="myFunction2()" >Copy code</button></h2>
+            <div class="code-square">
+                <!-- Add your code here -->
+                <code><pre><div id="codepy">
+MAX_SIZE = 100
 
-    <div class="input-box">
-        <h1>Crack the code</h1>
-        <p>VKDCDP</p>
-        <input type="text" id="user-input" placeholder="Enter your answer">
-        <br>
-        <button onclick="checkInput()">Submit</button>
-
-        <!-- Wrong answer message -->
-        <p class="wrong-message" id="wrong-message"></p>
-        
-        <!-- Right answer message -->
-        <p class="right-message" id="right-message"></p>
+class Queue:
+    def __init__(self):
+        self.data = [None] * MAX_SIZE
+        self.front = -1
+        self.rear = -1
+                    
+    def initializeQueue(self):
+        self.front = -1
+        self.rear = -1
+                    
+    def isEmpty(self):
+        return self.front == -1 and self.rear == -1
+                    
+    def isFull(self):
+        return self.rear == MAX_SIZE - 1
+                    
+    def enqueue(self, value):
+        if self.isFull():
+            print("Queue is full")
+            exit(EXIT_FAILURE)
+                    
+        if self.isEmpty():
+            self.front = 0
+            self.rear = 0
+        else:
+            self.rear += 1
+                    
+        self.data[self.rear] = value
+                    
+    def dequeue(self):
+        if self.isEmpty():
+            print("Queue is empty")
+            exit(EXIT_FAILURE) 
+                    
+        value = self.data[self.front]
+                    
+        if self.front == self.rear:
+            self.front = -1
+            self.rear = -1
+        else:
+            self.front += 1
+                    
+        return value
+                    
+    def printQueue(self)
+        for i in range(self.front, self.rear + 1):
+            print(chr(ord(self.data[i]) - 3), end="")
+        print()
+                    
+myString = ['Y', 'N', 'G', 'F', 'G', 'S']:
+length ==len(myString)
+                    
+myQueue = Queue()
+myQueue.initializeQueue()
+                    
+For i in range(length):
+    myQueue.enqueue(myString[i])
+                    
+myQueue.printQueue():
+                </div>
+                    </pre>
+                    </code>
+            </div>
+            <div class="input-container">
+                <input type="text" id="rightInput" placeholder="Enter your answer">
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('vkdcdp', 'rightMessage', 'rightSuccessMessage')">Check</button>
+                <div id="rightMessage" class="message"></div>
+                <div id="rightSuccessMessage" class="success-message"></div>
+            </div>
+        </div>
     </div>
-
-  
-    <!-- Modal for password entry -->
-<div id="passwordModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePasswordModal()">&times;</span>
-        <p >Enter password for round 3:</p>
-        <input type="password" id="passwordInputModal" placeholder="Enter password">
-        <button onclick="checkPasswordModal()">Enter</button>
-        <p id="wrongPasswordMessage" class="wrong-message"></p>
-    </div>
-</div>
-<button id="next-button" class="next-button" disabled onclick="openPasswordModal()">Next challenge</button>
-
-
+    <button class="next-button" id="nextButton"
+        onclick="window.location.href = 'https://joval-va.github.io/Vtapp/DC/c16p3';" disabled>Next
+        Challenge</button>
 
     <script>
-        function checkInput() {
-            const userInput = document.getElementById('user-input').value.toLowerCase();
-            const nextButton = document.getElementById('next-button');
-            const wrongMessage = document.getElementById('wrong-message');
-            const rightMessage = document.getElementById('right-message');
+        const leftInput = document.querySelector('#leftInput');
+        const rightInput = document.querySelector('#rightInput');
+        const nextButton = document.querySelector('#nextButton');
 
-            if (userInput !== 'shazam') {
-                // Display wrong answer message
-                wrongMessage.textContent = 'Wrong answer! Try again.';
-                // Clear the right answer message
-                rightMessage.textContent = '';
-                // Disable the Next button
-                nextButton.disabled = true;
+        leftInput.addEventListener('input', checkInputs);
+        rightInput.addEventListener('input', checkInputs);
+
+        // function checkInputs() {
+        //     const leftText = leftInput.value.trim().toLowerCase();
+        //     const rightText = rightInput.value.trim().toLowerCase();
+
+        //     if (leftText === 'jarvis' || rightText === 'ironman') {
+        //         nextButton.removeAttribute('disabled');
+        //     } else {
+        //         nextButton.setAttribute('disabled', 'true');
+        //     }
+        // }
+
+        function handleCheckButtonClick(correctAnswer, messageElementId, successMessageElementId) {
+            const inputField = document.getElementById(messageElementId);
+            const successMessageField = document.getElementById(successMessageElementId);
+            const leftText = leftInput.value.trim().toLowerCase();
+            const rightText = rightInput.value.trim().toLowerCase();
+
+            if (leftText === correctAnswer || rightText === correctAnswer) {
+                inputField.textContent = '';
+                successMessageField.textContent = 'Click next challenge button for the next challenge!';
+                nextButton.removeAttribute('disabled');
+            } else if (!leftText && !rightText) {
+                inputField.textContent = 'Please enter your answer.';
+                successMessageField.textContent = '';
             } else {
-                // Display right answer message
-                rightMessage.textContent = 'Correct! Click Next challenge to move to round 3';
-                // Clear the wrong answer message
-                wrongMessage.textContent = '';
-                // Enable the Next button
-                nextButton.disabled = false;
+                inputField.textContent = 'Wrong answer! Try again.';
+                successMessageField.textContent = '';
+                nextButton.setAttribute('disabled', 'true');
             }
         }
-        // Open password modal function
-function openPasswordModal() {
-    const passwordModal = document.getElementById('passwordModal');
-    passwordModal.style.display = 'block';
-}
-
-// Close password modal function
-function closePasswordModal() {
-    const passwordModal = document.getElementById('passwordModal');
-    passwordModal.style.display = 'none';
-}
-
-// Check password function
-function checkPasswordModal() {
-    const passwordInputModal = document.getElementById('passwordInputModal');
-    const enteredPasswordModal = passwordInputModal.value.trim();
-
-    // Replace 'your_password_for_round_3' with the actual password for round 3
-    if (enteredPasswordModal === 'Coffee33') {
-        closePasswordModal();
-        window.location.href = 'https://joval-va.github.io/Vtapp/DC/c16p4/';
-    } else {
-        const wrongPasswordMessage = document.getElementById('wrongPasswordMessage');
-         wrongPasswordMessage.textContent = "Did you really finish round 2?";
-
-        // Optionally, you can clear the input field
-        passwordInputModal.value = '';
-    }
-}
-// function closeWhiteBox() {
-//     const whiteBox = document.querySelector('.white-box');
-//     whiteBox.style.display = 'none';
-// }
+        function myFunction() {
+            var copyText =document.getElementById("code").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+        function myFunction2() {
+            var copyText =document.getElementById("codepy").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
 
 
     </script>
 </body>
+
 </html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="dc logo favicon.png">
+    <title>Round 1 part 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('dcubgimg.jpg');
+            /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .topbox {
+            background-color: rgba(194, 185, 241, 0.8);
+            /* Transparent white */
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            border-radius: 10px;
+            backdrop-filter: blur(2px);
+            box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        .box {
+            background-color: rgba(194, 185, 241, 0.803);
+            ;
+            /* Transparent white */
+            padding: 20px;
+            flex: 1;
+            margin: 0 10px;
+            border-radius: 10px;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .code-square {
+            background-color: rgba(255, 255, 255, 0.642);
+            /* Transparent black */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .input-container {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .check-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            /* Add spacing between input and button */
+            border-radius: 5px;
+        }
+
+        .next-button {
+            background-color: #28a745;
+            color: #000000;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+            /* Center horizontally */
+            border-radius: 5px;
+        }
+
+        .next-button[disabled] {
+            background-color: #ccc;
+            /* Disabled color */
+            cursor: not-allowed;
+            color: white;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: red;
+            /* Make the text red for wrong answers */
+        }
+
+        .success-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: black;
+            /* Make the text black for success messages */
+        }
+        .copy-btn{
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="topbox">
+        <h4>👩‍💻👨‍💻 Congratulations, Coding Maestro!<br>
+            You've successfully navigated the emoji labyrinth and now stand at the gates of the Coding Challenge.<br>
+            Brace yourself for the ultimate test of your programming prowess! 🚀<br>
+            Two code snippets await you, side by side.<br>
+            Choose either programming language: 🐍 Python or C.<br>
+            Identify and debug the code to reveal the secret key.<br>
+            Look for syntax errors and logical issues.<br>
+            Once you get the output, enter it in the space below to check it. Good luck!<br>
+            <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Click here</a> to
+            open online Python compiler,
+            or <a href="https://www.programiz.com/c-programming/online-compiler/" target="_blank">click here</a> to open
+            online C compiler.
+        </h4>
+    </div>
+    <div class="section">
+        <div class="box">
+            <h2 class="heading">C <button class="copy-btn" onclick="myFunction()" >Copy code</button></h2>
+            
+            <div class="code-square">
+                <!-- Add your code here -->
+                <code><pre><div id="code">
+#include stdio.h>
+#include "stdlib.h"
+                        
+define MAX_SIZE 100
+                        
+struct Stack {
+    char data[MAX_SIZE];
+    int top;
+}
+                        
+void initializeStack(struct Stack* stack) {
+    stack->top = -1;
+}
+                        
+int isEmpty(struct Stack* stack) {
+    return stack->top == -1;
+}
+                        
+int isFull(struct Stack* stack) {
+    return stack->top == MAX_SIZE - 1;
+}
+                        
+void push(struct Stack* stack, char value) {
+    if (isFull(stack)) {
+        print("Stack overflow\n");
+        exit(EXIT_FAILURE;
+    }
+                        
+    stack->data[++stack->top = value;
+}
+                        
+void printStack(struct Stack* stack) {
+    for ( i = 0, i <= stack->top i++) {
+        print("c", (stack->data[i])-3);
+    }
+    print("\n");
+}
+                        
+int main() {
+    char myString = {'M', 'U', 'Z', 'N', 'G', 'S'};
+    int length = sizeof(myString) / sizeof(myString[0]);
+                        
+    struct Stack myStack;
+    initializeStack(&myStack);
+                        
+    for ( i = 0, i < length, i++) {
+        push(&myStack, myString[i]);
+    }
+                        
+    printStack(myStack;
+                        
+    return 0;
+}
+</div></pre></code>
+            </div>
+            <div class="input-container">
+                <input type="text" id="leftInput" placeholder="Enter your answer">
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('jrwkdp', 'leftMessage', 'leftSuccessMessage')">Check</button>
+                <div id="leftMessage" class="message"></div>
+                <div id="leftSuccessMessage" class="success-message"></div>
+            </div>
+        </div>
+        <div class="box">
+            <h2 class="heading">Python <button class="copy-btn" onclick="myFunction2()" >Copy code</button></h2>
+            <div class="code-square">
+                <!-- Add your code here -->
+                <code><pre><div id="codepy"> 
+MAX_SIZE = 100
+
+class Stack:
+    def __init__(self):
+        self.data = [0] * MAX_SIZE
+        self.top = -1
+                    
+    def initialize_stack(stack)
+        stack.top = -1
+                    
+    def is_empty(stack)
+        return stack.top == -1
+                    
+    def is_full(stack):
+        return stack.top == MAX_SIZE - 1
+                    
+    def push(stack, value):
+        if is_full(stack):
+            print("Stack overflow")
+            exit(EXIT_FAILURE) 
+                    
+        stack.top += 1
+        stack.data[stack.top] = value
+                    
+    def print_stack(stack):
+        for i in range(stack.top + 1)
+            print(chr(stack.data[i] - 3), end="")  
+            print()
+                    
+    if __name__ == "__main__"
+        # Define the string
+        my_string = ['M', 'U', 'Z', 'N', 'G', 'S']
+        length = len(my_string)
+                    
+        my_stack = Stack
+        initialize_stack(my_stack) 
+                    
+        for i in range(length)
+        push(my_stack, ord(my_string[i]))
+                    
+        print_stack(my_stack)
+                </div>
+                    </pre>
+                    </code>
+            </div>
+            <div class="input-container">
+                <input type="text" id="rightInput" placeholder="Enter your answer">
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('jrwkdp', 'rightMessage', 'rightSuccessMessage')">Check</button>
+                <div id="rightMessage" class="message"></div>
+                <div id="rightSuccessMessage" class="success-message"></div>
+            </div>
+        </div>
+    </div>
+    <button class="next-button" id="nextButton"
+        onclick="window.location.href = 'https://joval-va.github.io/Vtapp/DC/c27p3';" disabled>Next
+        Challenge</button>
+
+    <script>
+        const leftInput = document.querySelector('#leftInput');
+        const rightInput = document.querySelector('#rightInput');
+        const nextButton = document.querySelector('#nextButton');
+
+        leftInput.addEventListener('input', checkInputs);
+        rightInput.addEventListener('input', checkInputs);
+
+        // function checkInputs() {
+        //     const leftText = leftInput.value.trim().toLowerCase();
+        //     const rightText = rightInput.value.trim().toLowerCase();
+
+        //     if (leftText === 'jarvis' || rightText === 'ironman') {
+        //         nextButton.removeAttribute('disabled');
+        //     } else {
+        //         nextButton.setAttribute('disabled', 'true');
+        //     }
+        // }
+
+        function handleCheckButtonClick(correctAnswer, messageElementId, successMessageElementId) {
+            const inputField = document.getElementById(messageElementId);
+            const successMessageField = document.getElementById(successMessageElementId);
+            const leftText = leftInput.value.trim().toLowerCase();
+            const rightText = rightInput.value.trim().toLowerCase();
+
+            if (leftText === correctAnswer || rightText === correctAnswer) {
+                inputField.textContent = '';
+                successMessageField.textContent = 'Click next challenge button for the next challenge!';
+                nextButton.removeAttribute('disabled');
+            } else if (!leftText && !rightText) {
+                inputField.textContent = 'Please enter your answer.';
+                successMessageField.textContent = '';
+            } else {
+                inputField.textContent = 'Wrong answer! Try again.';
+                successMessageField.textContent = '';
+                nextButton.setAttribute('disabled', 'true');
+            }
+        }
+        function myFunction() {
+            var copyText =document.getElementById("code").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+        function myFunction2() {
+            var copyText =document.getElementById("codepy").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+
+
+    </script>
+</body>
+
+</html>

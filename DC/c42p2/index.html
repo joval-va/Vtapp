@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="dc logo favicon.png">
+    <title>Round 1 part 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('dcubgimg.jpg');
+            /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .topbox {
+            background-color: rgba(194, 185, 241, 0.8);
+            /* Transparent white */
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            border-radius: 10px;
+            backdrop-filter: blur(2px);
+            box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        .box {
+            background-color: rgba(194, 185, 241, 0.803);
+            ;
+            /* Transparent white */
+            padding: 20px;
+            flex: 1;
+            margin: 0 10px;
+            border-radius: 10px;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .code-square {
+            background-color: rgba(255, 255, 255, 0.642);
+            /* Transparent black */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .input-container {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .check-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            /* Add spacing between input and button */
+            border-radius: 5px;
+        }
+
+        .next-button {
+            background-color: #28a745;
+            color: #000000;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+            /* Center horizontally */
+            border-radius: 5px;
+        }
+
+        .next-button[disabled] {
+            background-color: #ccc;
+            /* Disabled color */
+            cursor: not-allowed;
+            color: white;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: red;
+            /* Make the text red for wrong answers */
+        }
+
+        .success-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: black;
+            /* Make the text black for success messages */
+        }
+        .copy-btn{
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="topbox">
+        <h4>👩‍💻👨‍💻 Congratulations, Coding Maestro!<br>
+            You've successfully navigated the emoji labyrinth and now stand at the gates of the Coding Challenge.<br>
+            Brace yourself for the ultimate test of your programming prowess! 🚀<br>
+            Two code snippets await you, side by side.<br>
+            Choose either programming language: 🐍 Python or C.<br>
+            Identify and debug the code to reveal the secret key.<br>
+            Look for syntax errors and logical issues.<br>
+            Once you get the output, enter it in the space below to check it. Good luck!<br>
+            <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Click here</a> to
+            open online Python compiler,
+            or <a href="https://www.programiz.com/c-programming/online-compiler/" target="_blank">click here</a> to open
+            online C compiler.
+        </h4>
+    </div>
+    <div class="section">
+        <div class="box">
+            <h2 class="heading">C <button class="copy-btn" onclick="myFunction()" >Copy code</button></h2>
+            
+            <div class="code-square">
+                <!-- Add your code here -->
+                <code><pre><div id="code">
+#include stdio.h
+#include "stdlib"
+                    
+struct Node {
+    char data,
+    struct Node* next;
+}
+                    
+void printLinkedList(struct Node* head) {
+    while head != NULL) {
+        print("c", (head->data)-2);
+        head = head->next;
+    }
+    print("\n");
+}
+                    
+int main() {
+    char myString = {'H', 'E', 'V', 'O', 'W', 'I', 'M', 'H'};
+    int length = sizeof(myString) / sizeof(myString[0]);
+                    
+    struct Node* head = NUL;
+    struct Node* current = NUL;
+                    
+    for (int i = 0; i < length; i++) {
+        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+        if newNode == NUL) {
+            print"Memory allocation error\n");
+            exit(EXIT_FAILURE
+        }
+                    
+        newNode->data = myString[i];
+        newNode->next = NUL;
+                    
+        if (head == NUL); {
+            head = newNode;
+            current = head;
+        else {
+            current->next = newNode;
+            current = newNode;
+        }
+    }
+                    
+    printLinkedList(head);
+                    
+    while (head != NLL) {
+        struct Node* temp = head;
+        head = head->next;
+        free(temp);
+    }
+                    
+    return 0
+    }
+</div></pre></code>
+            </div>
+            <div class="input-container">
+                <input type="text" id="leftInput" placeholder="Enter your answer">
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('fctmugkf', 'leftMessage', 'leftSuccessMessage')">Check</button>
+                <div id="leftMessage" class="message"></div>
+                <div id="leftSuccessMessage" class="success-message"></div>
+            </div>
+        </div>
+        <div class="box">
+            <h2 class="heading">Python <button class="copy-btn" onclick="myFunction2()" >Copy code</button></h2>
+            <div class="code-square">
+                <!-- Add your code here -->
+                <code><pre><div id="codepy">
+class Node:
+    def __init__(self, data)
+        self.data = data
+        self.next = None
+                
+    def print_linked_list(head)
+        while head is not None
+            print(chr(ord(head.data) - 2), end=""
+            head = head.next
+        print()
+                
+        if __name__ == "__main__"
+            my_string = ['H', 'E', 'V', 'O', 'W', 'I', 'M', 'H'
+            length = len(my_string)
+                
+        head = None
+        current = None
+                
+        for i in range(length)
+            new_node = Node(my_string[i]
+                
+            if new_node is None
+                print("Memory allocation error"
+                exit(1)
+                
+            new_node.next = None
+                
+            if head is None
+                head = new_node
+                current = head
+            else
+                current.next = new_node
+                current = new_node
+                
+        print_linked_list(head)
+                
+        while head is not None
+            temp = head
+            head = head.next
+            del temp
+                </div>
+                    </pre>
+                    </code>
+            </div>
+            <div class="input-container">
+                <input type="text" id="rightInput" placeholder="Enter your answer">
+                <button class="check-button"
+                    onclick="handleCheckButtonClick('fctmugkf', 'rightMessage', 'rightSuccessMessage')">Check</button>
+                <div id="rightMessage" class="message"></div>
+                <div id="rightSuccessMessage" class="success-message"></div>
+            </div>
+        </div>
+    </div>
+    <button class="next-button" id="nextButton"
+        onclick="window.location.href = 'https://joval-va.github.io/Vtapp/DC/c42p3';" disabled>Next
+        Challenge</button>
+
+    <script>
+        const leftInput = document.querySelector('#leftInput');
+        const rightInput = document.querySelector('#rightInput');
+        const nextButton = document.querySelector('#nextButton');
+
+        leftInput.addEventListener('input', checkInputs);
+        rightInput.addEventListener('input', checkInputs);
+
+        // function checkInputs() {
+        //     const leftText = leftInput.value.trim().toLowerCase();
+        //     const rightText = rightInput.value.trim().toLowerCase();
+
+        //     if (leftText === 'jarvis' || rightText === 'ironman') {
+        //         nextButton.removeAttribute('disabled');
+        //     } else {
+        //         nextButton.setAttribute('disabled', 'true');
+        //     }
+        // }
+
+        function handleCheckButtonClick(correctAnswer, messageElementId, successMessageElementId) {
+            const inputField = document.getElementById(messageElementId);
+            const successMessageField = document.getElementById(successMessageElementId);
+            const leftText = leftInput.value.trim().toLowerCase();
+            const rightText = rightInput.value.trim().toLowerCase();
+
+            if (leftText === correctAnswer || rightText === correctAnswer) {
+                inputField.textContent = '';
+                successMessageField.textContent = 'Click next challenge button for the next challenge!';
+                nextButton.removeAttribute('disabled');
+            } else if (!leftText && !rightText) {
+                inputField.textContent = 'Please enter your answer.';
+                successMessageField.textContent = '';
+            } else {
+                inputField.textContent = 'Wrong answer! Try again.';
+                successMessageField.textContent = '';
+                nextButton.setAttribute('disabled', 'true');
+            }
+        }
+        function myFunction() {
+            var copyText =document.getElementById("code").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+        function myFunction2() {
+            var copyText =document.getElementById("codepy").innerText;
+            navigator.clipboard.writeText(copyText)   
+            alert("Code copied to clipboard")       
+        }
+
+
+    </script>
+</body>
+
+</html>
